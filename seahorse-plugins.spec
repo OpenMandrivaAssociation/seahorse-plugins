@@ -1,6 +1,6 @@
 %define name seahorse-plugins
 %define version 2.23.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define epiphany 2.23
 %define build_epiphany 1
@@ -85,6 +85,9 @@ for omf in %buildroot%_datadir/omf/*/*-??*.omf;do
 echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
 done
 
+# gw conflict with seahorse
+rm -f %buildroot%_datadir/icons/hicolor/48x48/apps/seahorse.png
+rm -f %buildroot%_datadir/icons/hicolor/48x48/apps/seahorse-preferences.png
  
 %post
 %if %mdkversion < 200900
