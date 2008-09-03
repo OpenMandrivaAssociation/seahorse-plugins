@@ -1,6 +1,6 @@
 %define name seahorse-plugins
-%define version 2.23.6
-%define release %mkrel 2
+%define version 2.23.91
+%define release %mkrel 1
 
 %define epiphany 2.23
 %define build_epiphany 1
@@ -13,10 +13,6 @@ License:	GPLv2+ and GFDL
 Group:		Graphical desktop/GNOME
 URL:		http://seahorse.sourceforge.net/
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
-Patch: 		seahorse-plugins-2.23.6-epi2.23.patch
-#gw from svn, fix conflict with main seahorse package
-# http://bugzilla.gnome.org/show_bug.cgi?id=546531
-Patch1:		seahorse-plugins-r2345-fix-conflicts.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:  libseahorse-devel
 BuildRequires:  libgpgme-devel
@@ -62,9 +58,6 @@ This package integrates Seahorse with the Epiphany web browser.
 %prep
 
 %setup -q
-%patch -p1 -b .epi2.23
-%patch1
-gnome-autogen.sh
 
 %build
 export CPPFLAGS="$CPPFLAGS -DLIBCRYPTUI_API_SUBJECT_TO_CHANGE"
