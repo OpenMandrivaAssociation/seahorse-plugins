@@ -1,6 +1,6 @@
 %define name seahorse-plugins
 %define version 2.23.91
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define epiphany 2.23
 %define build_epiphany 1
@@ -13,6 +13,8 @@ License:	GPLv2+ and GFDL
 Group:		Graphical desktop/GNOME
 URL:		http://seahorse.sourceforge.net/
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
+#gw from Fedora, start seahorse-agent from xinit
+Source1:	seahorse-agent.sh
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:  libseahorse-devel
 BuildRequires:  libgpgme-devel
@@ -81,6 +83,10 @@ done
 # gw conflict with seahorse
 rm -f %buildroot%_datadir/icons/hicolor/48x48/apps/seahorse.png
 rm -f %buildroot%_datadir/icons/hicolor/48x48/apps/seahorse-preferences.png
+
+mkdir -p $RPM_BUILD_ROOT%_sysconfdir/X11/xinit.d/
+install -m 755 %{SOURCE1} $RPM_BUILD_ROOT%_sysconfdir/X11/xinit.d/seahorse-agent.sh
+
  
 %post
 %if %mdkversion < 200900
@@ -114,6 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %name.lang
 %defattr(-,root,root,0755)
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README
+%_sysconfdir/X11/xinit.d/seahorse-agent.sh
 %{_sysconfdir}/gconf/schemas/seahorse-plugins.schemas
 %{_sysconfdir}/gconf/schemas/seahorse-gedit.schemas
 %_bindir/seahorse-agent
