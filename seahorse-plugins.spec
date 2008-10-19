@@ -1,6 +1,6 @@
 %define name seahorse-plugins
-%define version 2.24.0
-%define release %mkrel 3
+%define version 2.24.1
+%define release %mkrel 1
 
 %define epiphany 2.24
 %define build_epiphany 1
@@ -138,10 +138,7 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man1/*
 %_datadir/pixmaps/*
 #%dir %{_datadir}/omf/seahorse-plugins/
-%dir %{_datadir}/seahorse/
-%dir %{_datadir}/seahorse/glade/
 #%{_datadir}/omf/seahorse/seahorse-C.omf
-%{_datadir}/seahorse/glade/*
 %_datadir/icons/hicolor/*/apps/*
 
 %if %build_epiphany
