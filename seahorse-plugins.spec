@@ -1,5 +1,5 @@
 %define name seahorse-plugins
-%define version 2.25.90
+%define version 2.25.92
 %define release %mkrel 1
 
 %define epiphany 2.25
@@ -15,7 +15,6 @@ URL:		http://seahorse.sourceforge.net/
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 #gw from Fedora, start seahorse-agent from xinit
 Source1:	seahorse-agent.sh
-Patch: seahorse-plugins-2.25.3-epiphany2.25.patch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:  libseahorse-devel
 BuildRequires:  libgpgme-devel
@@ -61,8 +60,6 @@ This package integrates Seahorse with the Epiphany web browser.
 %prep
 
 %setup -q
-%patch -p1
-autoreconf
 
 %build
 export CPPFLAGS="$CPPFLAGS -DLIBCRYPTUI_API_SUBJECT_TO_CHANGE"
