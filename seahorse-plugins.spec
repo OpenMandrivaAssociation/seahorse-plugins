@@ -1,6 +1,6 @@
 %define name seahorse-plugins
 %define version 2.26.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define epiphany 2.26
 %define build_epiphany 1
@@ -76,7 +76,7 @@ rm -f %buildroot%_libdir/{gedit-2/plugins/libseahorse-pgp.a,nautilus/extensions-
 %{find_lang} %name --with-gnome
 %{find_lang} seahorse-applet --with-gnome
 cat seahorse-applet.lang >> %name.lang
-for omf in %buildroot%_datadir/omf/*/*-??*.omf;do 
+for omf in %buildroot%_datadir/omf/*/*[-_]??.omf;do 
 echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
 done
 
