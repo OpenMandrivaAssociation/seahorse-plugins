@@ -137,8 +137,10 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/%name
 %_mandir/man1/*
 %_datadir/pixmaps/*
-#%dir %{_datadir}/omf/seahorse-plugins/
-#%{_datadir}/omf/seahorse/seahorse-C.omf
+%dir %{_datadir}/omf/seahorse-plugins/
+%dir %{_datadir}/omf/seahorse-applet/
+%{_datadir}/omf/seahorse-applet/seahorse-applet-C.omf
+%{_datadir}/omf/seahorse-plugins/seahorse-plugins-C.omf
 %_datadir/icons/hicolor/*/apps/*
 
 %if %build_epiphany
