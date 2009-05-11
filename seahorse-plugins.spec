@@ -3,7 +3,7 @@
 %define release %mkrel 1
 
 %define epiphany 2.26
-%define build_epiphany 1
+%define build_epiphany 0
 
 Name:		%{name}
 Summary:	Plugins and utilities for encryption in GNOME
