@@ -1,5 +1,5 @@
 %define name seahorse-plugins
-%define version 2.27.1
+%define version 2.28.0
 %define release %mkrel 1
 
 %define epiphany 2.26
