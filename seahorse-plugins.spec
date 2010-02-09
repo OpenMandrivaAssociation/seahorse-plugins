@@ -1,5 +1,5 @@
 %define name seahorse-plugins
-%define version 2.29.3
+%define version 2.29.90
 %define release %mkrel 1
 
 %define epiphany 2.26
@@ -18,7 +18,7 @@ Source1:	seahorse-agent.sh
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:  libseahorse-devel
 BuildRequires:  libgpgme-devel
-BuildRequires:  gnome-keyring-devel
+BuildRequires:  libgnome-keyring-devel
 BuildRequires:  evolution-data-server-devel
 BuildRequires:  gnome-panel-devel
 BuildRequires:  gedit-devel
