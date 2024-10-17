@@ -11,7 +11,7 @@ Version:	%{version}
 Release:	%{release}
 License:	GPLv2+ and GFDL
 Group:		Graphical desktop/GNOME
-URL:		http://seahorse.sourceforge.net/
+URL:		https://seahorse.sourceforge.net/
 Source:		http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 #gw from Fedora, start seahorse-agent from xinit
 Source1:	seahorse-agent.sh
